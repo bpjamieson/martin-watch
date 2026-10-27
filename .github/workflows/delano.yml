@@ -1,4 +1,4 @@
-name: Delano restock watch
+name: Martin restock watch
 
 on:
   schedule:
@@ -28,16 +28,16 @@ jobs:
       - name: Load last state
         uses: actions/cache/restore@v4
         with:
-          path: delano_state.json
-          key: delano-state-${{ github.run_id }}
-          restore-keys: delano-state-
+          path: martin_state.json
+          key: martin-state-${{ github.run_id }}
+          restore-keys: martin-state-
 
       - name: Check stock
-        run: python delano_watch.py ${{ inputs.test && '--test' || '' }}
+        run: python martin_watch.py ${{ inputs.test && '--test' || '' }}
 
       - name: Save state
         if: always()
         uses: actions/cache/save@v4
         with:
-          path: delano_state.json
-          key: delano-state-${{ github.run_id }}
+          path: martin_state.json
+          key: martin-state-${{ github.run_id }}
