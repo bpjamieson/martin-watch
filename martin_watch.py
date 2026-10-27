@@ -19,7 +19,7 @@ from playwright.sync_api import sync_playwright
 URL = "https://www.martinguitar.com/gear-accessories/parts/bridge-end-pins/bone-bridge-pins.html"
 COLORS = ["Paua Inlay", "Black Inlay", "Faux Tortoise Inlay"]
 WATCH = ["Paua Inlay"]                       # color(s) you want alerts for
-NTFY_TOPIC = "delano-restock-CHANGE-ME-8472"  # same channel your phone is on
+NTFY_TOPIC = "bj-martin-pins"  # same channel your phone is on
 STATE = pathlib.Path(__file__).with_name("martin_state.json")
 OUT = re.compile(r"out\s*of\s*stock|sold\s*out|unavailable|back\s*order|not\s*available", re.I)
 
